@@ -1,7 +1,7 @@
 # RecipeDeck 🍳
 > **"Good Food. Shared Stories."**
 
-RecipeDeck is a decentralized culinary archive and recipe-sharing platform where home cooks and professional chefs publish their favourite recipes and explore dishes shared by others on-chain.
+RecipeDeck is a decentralized culinary archive and recipe-sharing platform where home cooks and professional chefs publish their favourite recipes and explore dishes shared by others on-chain on **Botchain Mainnet**.
 
 Designed with the aesthetic elegance of an artisanal food magazine, RecipeDeck features warm terracotta orange, cream linen textures, deep editorial charcoal, and subtle golden honey accents.
 
@@ -19,15 +19,17 @@ Designed with the aesthetic elegance of an artisanal food magazine, RecipeDeck f
 
 ---
 
-## 🌐 Network Configuration: Botchain Testnet
+## 🌐 Network Configuration: Botchain Mainnet
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet (Bohr) |
-| **Chain ID** | `968` |
-| **Currency Symbol** | `BOHR` (or `BOT`) |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | `https://scan.bohr.life` |
+| **Network Name** | Botchain Mainnet |
+| **Chain ID** | `677` |
+| **Currency Symbol** | `BOT` |
+| **Total Supply** | 150 Million |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Block Explorer** | `https://scan.botchain.ai` |
+| **Verified Contract** | [`0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code) |
 
 ---
 
@@ -54,9 +56,9 @@ Recipedeck/
 ├── test/
 │   └── RecipeDeck.test.ts  # Comprehensive automated contract test suite
 ├── scripts/
-│   └── deploy.ts           # Hardhat deployment script for Botchain Testnet
+│   └── deploy.ts           # Hardhat deployment script for Botchain Mainnet
 ├── lib/
-│   ├── chains.ts           # Botchain Testnet viem chain definition
+│   ├── chains.ts           # Botchain Mainnet & Testnet viem chain definitions
 │   ├── contract.ts         # Contract ABI, types & default configuration
 │   └── wagmi.ts            # Wagmi client configuration
 ├── hardhat.config.ts       # Hardhat network & compiler configuration
@@ -69,7 +71,7 @@ Recipedeck/
 ## 🚀 Getting Started
 
 ### 1. Prerequisites
-- Node.js 18+ (tested up to Node 25)
+- Node.js 18+
 - npm or pnpm
 - MetaMask or any Injected Web3 Wallet
 
@@ -84,11 +86,11 @@ Copy `.env.example` to `.env`:
 cp .env.example .env
 ```
 
-Edit `.env` with your deployer private key:
+Configure `.env`:
 ```env
-BOTCHAIN_RPC_URL=https://rpc.bohr.life
+BOTCHAIN_MAINNET_RPC_URL=https://rpc.botchain.ai
 PRIVATE_KEY=your_private_key_here
-NEXT_PUBLIC_RECIPEDECK_ADDRESS=0x0000000000000000000000000000000000000000
+NEXT_PUBLIC_RECIPEDECK_ADDRESS=0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA
 ```
 
 ---
@@ -105,29 +107,14 @@ Run the automated test suite (11 unit tests covering all contract requirements):
 npm test
 ```
 
-### Verified Test Cases:
-1. `should publish a recipe successfully and emit RecipePublished event`
-2. `should revert if required fields are empty`
-3. `should return all active recipes`
-4. `should filter by author correctly`
-5. `should allow a user to like a recipe and emit RecipeLiked event`
-6. `should prevent duplicate likes from the same wallet`
-7. `should allow unliking a previously liked recipe and emit RecipeUnliked event`
-8. `should revert if unliking when not liked yet`
-9. `should allow only the author to remove the recipe and emit RecipeRemoved`
-10. `should revert if non-author tries to remove the recipe`
-11. `should revert if trying to remove an already deleted recipe`
-
 ---
 
-## 🚢 Deploying to Botchain Testnet
+## 🚢 Deploying to Botchain Mainnet
 
-Deploy `RecipeDeck.sol` to Botchain Testnet (Chain ID 968):
+Deploy `RecipeDeck.sol` to Botchain Mainnet (Chain ID 677):
 ```bash
 npm run deploy
 ```
-
-Upon successful deployment, the script outputs the deployed contract address and saves the details to `contracts-data/RecipeDeck-address.json`. Update `NEXT_PUBLIC_RECIPEDECK_ADDRESS` in your `.env` or set it directly in the frontend's built-in **Contract Configuration** modal.
 
 ---
 
@@ -139,21 +126,3 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-Build for production:
-```bash
-npm run build
-npm start
-```
-
----
-
-## 📖 Key User Journeys
-
-1. **Connect Wallet**: Click "Connect Wallet" to link MetaMask. If connected to another network, an instant banner prompts one-click switching to Botchain Testnet (Chain ID 968).
-2. **Publish Recipe**: Click "Publish Recipe", choose a category (Breakfast, Lunch, Dinner, Dessert, Vegetarian, Bakery, Beverages), write ingredients & steps, select a curated cover photo or custom URL, preview your card in real-time, and confirm the on-chain transaction.
-3. **Explore & Filter**: Filter by category pills, search across ingredients/titles, toggle between "All Recipes" and "My Recipes", or sort by Newest, Most Liked, and Oldest.
-4. **Interactive Cooking Details**: Click any recipe card to open the editorial view with interactive ingredient checkboxes (to check off items while preparing) and numbered step-by-step cooking instructions.
-5. **Like / Unlike**: Click the heart button on cards or inside the details modal to appreciate dishes on-chain (duplicate likes prevented).
-6. **Author Removal**: Authors can remove their recipes from the on-chain index with one click.
-

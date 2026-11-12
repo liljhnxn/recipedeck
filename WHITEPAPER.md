@@ -3,10 +3,12 @@
 
 *A Decentralized, Immutable Culinary Archive on the Botchain Network*
 
-**Version:** 1.0.0  
+**Version:** 2.0.0 (Mainnet Edition)  
 **Date:** November 2026  
-**Smart Contract:** [`0x18222C792493bb0593bbce49bF3b8CBE77CBe106`](https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code)  
-**Network:** Botchain Testnet (Chain ID `968`)  
+**Smart Contract:** [`0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code)  
+**Network:** Botchain Mainnet (Chain ID `677`)  
+**Native Currency:** `BOT`  
+**Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
 **Repository:** [https://github.com/liljhnxn/recipedeck.git](https://github.com/liljhnxn/recipedeck.git)  
 
 ---
@@ -53,10 +55,10 @@ RecipeDeck replaces fragile, ad-saturated databases with a decentralized, immuta
 |  [Next.js App Router] <-> [Wagmi / Viem] <-> [MetaMask]     |
 +-------------------------------------------------------------+
                               |
-                     RPC: https://rpc.bohr.life
+                     RPC: https://rpc.botchain.ai
                               v
 +-------------------------------------------------------------+
-|                Botchain Testnet (Chain ID: 968)              |
+|                 Botchain Mainnet (Chain ID: 677)            |
 |                                                             |
 |   +-----------------------------------------------------+   |
 |   |                  RecipeDeck.sol                     |   |
@@ -109,7 +111,7 @@ RecipeDeck is styled like a timeless culinary periodical rather than a generic c
 - **Typography**: Playfair Display serif headings paired with clean, accessible sans-serif body type.
 - **Interactive Kitchen Checklist**: Cooks can tick off ingredients on their screen in real-time as they prep meals.
 - **Live Card Preview**: Authors see an exact visual card representation of their dish before spending gas on-chain.
-- **Seamless Network Onboarding**: Automatic detection of chain status with one-click network addition/switching for Botchain Testnet (Chain ID 968).
+- **Seamless Network Onboarding**: Automatic detection of chain status with one-click network addition/switching for Botchain Mainnet (Chain ID 677).
 
 ---
 
@@ -118,10 +120,10 @@ RecipeDeck is styled like a timeless culinary periodical rather than a generic c
 | Field | Detail |
 |---|---|
 | **Contract Name** | `RecipeDeck` |
-| **Contract Address** | `0x18222C792493bb0593bbce49bF3b8CBE77CBe106` |
+| **Contract Address** | `0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA` |
 | **Compiler** | Solidity `0.8.20` with optimizer enabled (200 runs) |
 | **EVM Version** | `paris` |
-| **Block Explorer** | [BOHR Scan Verified Contract](https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code) |
+| **Block Explorer** | [Botchain Scan Verified Contract](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code) |
 | **Test Suite** | 11/11 automated unit tests passing across all functional paths |
 
 ---
@@ -130,7 +132,7 @@ RecipeDeck is styled like a timeless culinary periodical rather than a generic c
 
 ### Phase 1: Genesis (Completed)
 - [x] Solidity smart contract architecture and Hardhat test suite
-- [x] Deployment and verification on Botchain Testnet (Chain ID 968)
+- [x] Deployment and verification on Botchain Mainnet (Chain ID 677)
 - [x] Single-page responsive Next.js frontend with Wagmi v2
 - [x] On-chain duplicate-proof liking, categorization, and author management
 

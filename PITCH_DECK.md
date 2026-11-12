@@ -1,8 +1,11 @@
 # RecipeDeck — Pitch Deck 🍳
 **Tagline:** "Good Food. Shared Stories."  
 **Website:** [http://localhost:3000](http://localhost:3000)  
-**Smart Contract:** [`0x18222C792493bb0593bbce49bF3b8CBE77CBe106`](https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code)  
-**Network:** Botchain Testnet (Chain ID `968`)  
+**Smart Contract:** [`0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code)  
+**Network:** Botchain Mainnet (Chain ID `677`)  
+**Native Token:** `BOT`  
+**Total Supply:** 150 Million  
+**Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
 **GitHub:** [https://github.com/liljhnxn/recipedeck.git](https://github.com/liljhnxn/recipedeck.git)  
 
 ---
@@ -10,7 +13,7 @@
 ### Slide 1: Cover & Masthead
 * **Title**: **RecipeDeck**
 * **Subtitle**: Good Food. Shared Stories.
-* **Elevator Pitch**: A decentralized, permanent culinary archive where recipes, ingredients, and appreciations are inscribed 100% on-chain.
+* **Elevator Pitch**: A decentralized, permanent culinary archive where recipes, ingredients, and appreciations are inscribed 100% on-chain on Botchain Mainnet.
 * **Presenter**: RecipeDeck Core Team
 
 ---
@@ -41,18 +44,19 @@
 
 ### Slide 5: Technical Highlights
 * **Strict Single Page**: `app/page.tsx` built with Next.js App Router, Tailwind CSS, TypeScript, and wagmi v2 / viem.
-* **Strict Single Contract**: `RecipeDeck.sol` deployed and verified on Botchain Testnet (Chain ID 968).
-* **Zero Backend or Central DB**: True peer-to-peer dApp reading directly from RPC `https://rpc.bohr.life`.
+* **Strict Single Contract**: `RecipeDeck.sol` deployed and verified on Botchain Mainnet (Chain ID 677).
+* **Zero Backend or Central DB**: True peer-to-peer dApp reading directly from RPC `https://rpc.botchain.ai`.
 * **On-Chain Sybil Protection**: Smart contract prevents duplicate likes from the same wallet address.
 * **100% Test Coverage**: 11 automated unit tests verifying publishing, liking, unliking, and removal.
 
 ---
 
 ### Slide 6: Verified Deployment & Metrics
-* **Network**: Botchain Testnet (Chain ID `968`)
-* **RPC Endpoint**: `https://rpc.bohr.life`
-* **Verified Contract Address**: `0x18222C792493bb0593bbce49bF3b8CBE77CBe106`
-* **Explorer Verification**: Verified on [scan.bohr.life](https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code)
+* **Network**: Botchain Mainnet (Chain ID `677`)
+* **RPC Endpoint**: `https://rpc.botchain.ai`
+* **Verified Contract Address**: `0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`
+* **Explorer Verification**: Verified on [scan.botchain.ai](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code)
+* **Gas-Optimized Deployment**: Only 0.0317 BOT spent for contract deployment!
 * **Automated Unit Tests**: 11/11 passing in Hardhat
 
 ---
@@ -65,7 +69,7 @@
 ---
 
 ### Slide 8: Roadmap & Next Steps
-* **Phase 1 (Completed)**: Smart contract deployed & verified on Botchain, responsive editorial dApp launched, GitHub repository live.
+* **Phase 1 (Completed)**: Smart contract deployed & verified on Botchain Mainnet, responsive editorial dApp launched, GitHub repository live.
 * **Phase 2 (Next)**: Decentralized image storage via IPFS/Arweave, forkable recipe variations, and printable PDF cards.
 * **Phase 3 (Vision)**: Cook-along voice assistant mode, seasonal on-chain community anthologies, and multi-chain expansion.
 
@@ -73,6 +77,6 @@
 
 ### Slide 9: Contact & Links
 * **Live GitHub Code**: [https://github.com/liljhnxn/recipedeck.git](https://github.com/liljhnxn/recipedeck.git)
-* **Verified Contract**: [https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code](https://scan.bohr.life/address/0x18222C792493bb0593bbce49bF3b8CBE77CBe106#code)
+* **Verified Contract**: [https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code)
 * **Whitepaper**: Included in repository as [`WHITEPAPER.md`](./WHITEPAPER.md)
 * **Tagline**: *"Good Food. Shared Stories."*

@@ -220,5 +220,5 @@ export interface FormattedRecipe {
 // Fallback address or configured address
 export const DEFAULT_CONTRACT_ADDRESS: `0x${string}` =
   (process.env.NEXT_PUBLIC_RECIPEDECK_ADDRESS as `0x${string}`) ||
-  "0x18222C792493bb0593bbce49bF3b8CBE77CBe106";
+  "0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA";
 

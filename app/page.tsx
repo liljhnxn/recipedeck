@@ -43,7 +43,7 @@ import {
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { RECIPEDECK_ABI, FormattedRecipe, DEFAULT_CONTRACT_ADDRESS } from "@/lib/contract";
-import { botchainTestnet } from "@/lib/chains";
+import { botchainMainnet } from "@/lib/chains";
 
 // Curated Category list with thematic styling
 const CATEGORIES = [
@@ -154,7 +154,7 @@ export default function RecipeDeckPage() {
   });
   const [previewMode, setPreviewMode] = useState<boolean>(false);
 
-  const isWrongNetwork = isConnected && chain?.id !== botchainTestnet.id;
+  const isWrongNetwork = isConnected && chain?.id !== botchainMainnet.id;
 
   // Add notification toast
   const addToast = useCallback((type: "success" | "error" | "info", message: string, txHash?: string) => {
@@ -274,18 +274,18 @@ export default function RecipeDeckPage() {
   const handleSwitchToBotchain = async () => {
     try {
       if (switchChain) {
-        await switchChain({ chainId: botchainTestnet.id });
-        addToast("info", "Switched to Botchain Testnet (Chain ID 968)");
+        await switchChain({ chainId: botchainMainnet.id });
+        addToast("info", "Switched to Botchain Mainnet (Chain ID 677)");
       } else if (window.ethereum) {
         await window.ethereum.request({
           method: "wallet_addEthereumChain",
           params: [
             {
-              chainId: `0x${botchainTestnet.id.toString(16)}`,
-              chainName: botchainTestnet.name,
-              nativeCurrency: botchainTestnet.nativeCurrency,
-              rpcUrls: botchainTestnet.rpcUrls.default.http,
-              blockExplorerUrls: [botchainTestnet.blockExplorers.default.url],
+              chainId: `0x${botchainMainnet.id.toString(16)}`,
+              chainName: botchainMainnet.name,
+              nativeCurrency: botchainMainnet.nativeCurrency,
+              rpcUrls: botchainMainnet.rpcUrls.default.http,
+              blockExplorerUrls: [botchainMainnet.blockExplorers.default.url],
             },
           ],
         });
@@ -304,7 +304,7 @@ export default function RecipeDeckPage() {
     }
 
     if (isWrongNetwork) {
-      addToast("error", "Please switch to Botchain Testnet (Chain ID 968).");
+      addToast("error", "Please switch to Botchain Mainnet (Chain ID 677).");
       return;
     }
 
@@ -391,7 +391,7 @@ export default function RecipeDeckPage() {
     }
 
     if (isWrongNetwork) {
-      addToast("error", "Please switch to Botchain Testnet to interact.");
+      addToast("error", "Please switch to Botchain Mainnet to interact.");
       return;
     }
 
@@ -615,12 +615,12 @@ export default function RecipeDeckPage() {
               <p className="font-semibold text-charcoal-900 leading-snug">{toast.message}</p>
               {toast.txHash && (
                 <a
-                  href={`https://scan.bohr.life/tx/${toast.txHash}`}
+                  href={`https://scan.botchain.ai/tx/${toast.txHash}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-xs font-medium text-terracotta-600 hover:text-terracotta-700 mt-1.5 underline underline-offset-2"
                 >
-                  View on Bohr Scan <ExternalLink className="w-3 h-3 ml-1" />
+                  View on Botchain Scan <ExternalLink className="w-3 h-3 ml-1" />
                 </a>
               )}
             </div>
@@ -641,7 +641,7 @@ export default function RecipeDeckPage() {
             <div className="flex items-center space-x-2">
               <AlertCircle className="w-4 h-4 flex-shrink-0 text-charcoal-950" />
               <span>
-                You are currently connected to <strong>{chain?.name || "an unsupported network"}</strong>. RecipeDeck requires <strong>Botchain Testnet (Chain ID 968)</strong>.
+                You are currently connected to <strong>{chain?.name || "an unsupported network"}</strong>. RecipeDeck requires <strong>Botchain Mainnet (Chain ID 677)</strong>.
               </span>
             </div>
             <button
@@ -660,11 +660,11 @@ export default function RecipeDeckPage() {
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <span className="editorial-badge bg-terracotta-100 text-terracotta-700 px-2 py-0.5 rounded">
-              VOL. 1 • ISSUE 04
+              MAINNET EDITION • VOL. 1
             </span>
             <span className="hidden sm:inline text-charcoal-500">•</span>
             <span className="hidden sm:inline font-medium tracking-wide">
-              BOTCHAIN TESTNET (CHAIN ID 968)
+              BOTCHAIN MAINNET (CHAIN ID 677)
             </span>
           </div>
           <div className="flex items-center space-x-4">
@@ -682,12 +682,12 @@ export default function RecipeDeckPage() {
               </span>
             </button>
             <a
-              href="https://scan.bohr.life"
+              href="https://scan.botchain.ai"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden md:flex items-center space-x-1 hover:text-charcoal-900 text-[11px]"
             >
-              <span>scan.bohr.life</span>
+              <span>scan.botchain.ai</span>
               <ExternalLink className="w-2.5 h-2.5" />
             </a>
           </div>
@@ -888,10 +888,10 @@ export default function RecipeDeckPage() {
             <div className="text-center p-3">
               <div className="flex items-center justify-center space-x-1.5 text-emerald-600">
                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 pulse-subtle" />
-                <span className="font-serif-editorial text-2xl sm:text-3xl font-bold">968</span>
+                <span className="font-serif-editorial text-2xl sm:text-3xl font-bold">677</span>
               </div>
               <p className="text-xs uppercase tracking-wider text-charcoal-500 font-medium mt-1">
-                Botchain Testnet
+                Botchain Mainnet
               </p>
             </div>
           </div>
@@ -1154,7 +1154,7 @@ export default function RecipeDeckPage() {
                           <div className="flex items-center space-x-1.5 font-mono">
                             <span className="w-2 h-2 rounded-full bg-honey-400" />
                             <a
-                              href={`https://scan.bohr.life/address/${recipe.author}`}
+                              href={`https://scan.botchain.ai/address/${recipe.author}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="hover:text-terracotta-600 transition-colors"
@@ -1275,7 +1275,7 @@ export default function RecipeDeckPage() {
                     <span className="flex items-center space-x-1">
                       <span>Shared by</span>
                       <a
-                        href={`https://scan.bohr.life/address/${selectedRecipe.author}`}
+                        href={`https://scan.botchain.ai/address/${selectedRecipe.author}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-mono text-terracotta-600 hover:underline font-semibold"
@@ -1405,7 +1405,7 @@ export default function RecipeDeckPage() {
             {/* Modal Bottom Bar */}
             <div className="p-4 bg-cream-100 border-t border-cream-200 flex items-center justify-between">
               <a
-                href={`https://scan.bohr.life/address/${contractAddress}`}
+                href={`https://scan.botchain.ai/address/${contractAddress}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-charcoal-500 hover:text-charcoal-800 flex items-center space-x-1"
@@ -1735,7 +1735,7 @@ export default function RecipeDeckPage() {
             <div className="space-y-4 text-xs sm:text-sm text-charcoal-700 mb-6">
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                  RecipeDeck Contract Address (Botchain Testnet)
+                  RecipeDeck Contract Address (Botchain Mainnet)
                 </label>
                 <input
                   type="text"
@@ -1749,25 +1749,29 @@ export default function RecipeDeckPage() {
               <div className="p-3 bg-cream-100 rounded-xl space-y-1.5 text-xs text-charcoal-600">
                 <div className="flex justify-between">
                   <span className="font-medium">Network:</span>
-                  <span>Botchain Testnet (Bohr)</span>
+                  <span>Botchain Mainnet</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Chain ID:</span>
-                  <span>968</span>
+                  <span>677</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="font-medium">Native Token:</span>
+                  <span>BOT</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">RPC Endpoint:</span>
-                  <span>https://rpc.bohr.life</span>
+                  <span>https://rpc.botchain.ai</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="font-medium">Block Explorer:</span>
                   <a
-                    href="https://scan.bohr.life"
+                    href="https://scan.botchain.ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-terracotta-600 underline"
                   >
-                    scan.bohr.life
+                    scan.botchain.ai
                   </a>
                 </div>
               </div>
@@ -1810,7 +1814,7 @@ export default function RecipeDeckPage() {
 
             <div className="text-xs text-center md:text-right space-y-1">
               <p className="font-medium text-charcoal-700">
-                Decentralized on Botchain Testnet (Chain ID 968)
+                Decentralized on Botchain Mainnet (Chain ID 677)
               </p>
               <p className="text-charcoal-500">
                 Every recipe is an immutable cultural record. No servers, no tracking, pure culinary craft.

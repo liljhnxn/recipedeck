@@ -1,8 +1,8 @@
 {
-  "address": "0x18222C792493bb0593bbce49bF3b8CBE77CBe106",
-  "network": "botchain",
-  "chainId": 968,
+  "address": "0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA",
+  "network": "botchainMainnet",
+  "chainId": 677,
   "deployer": "0x83acc57bb9CDe889b248E9c740F5248637cd89f4",
-  "deployedAt": "2026-11-06T14:20:00.000Z"
+  "txHash": "0xcdc8ed789e88a55797b5ec158fa04af259b91a44aa2bda77518ffc3b3a5d65cf",
+  "deployedAt": "2026-11-12T09:29:31.140Z"
 }
-
