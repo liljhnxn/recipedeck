@@ -682,6 +682,15 @@ export default function RecipeDeckPage() {
               </span>
             </button>
             <a
+              href="https://botchain.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden lg:flex items-center space-x-1 hover:text-charcoal-900 text-[11px]"
+            >
+              <span>botchain.ai</span>
+              <ExternalLink className="w-2.5 h-2.5" />
+            </a>
+            <a
               href="https://scan.botchain.ai"
               target="_blank"
               rel="noopener noreferrer"
@@ -1796,29 +1805,116 @@ export default function RecipeDeckPage() {
         </div>
       )}
 
-      {/* Editorial Footer */}
-      <footer className="border-t border-cream-300 bg-cream-100/70 py-12 mt-20 text-charcoal-600">
+      {/* Editorial & BOT Chain Ecosystem Footer */}
+      <footer className="border-t border-cream-300 bg-cream-100/90 py-14 mt-20 text-charcoal-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-xl bg-terracotta-600 flex items-center justify-center text-white shadow-sm">
-                <ChefHat className="w-5 h-5" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-10 border-b border-cream-300">
+            {/* Brand Column */}
+            <div className="space-y-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-xl bg-terracotta-600 flex items-center justify-center text-white shadow-sm">
+                  <ChefHat className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="font-serif-editorial text-xl font-bold text-charcoal-900">
+                    RecipeDeck
+                  </span>
+                  <p className="text-xs text-charcoal-500 font-medium">Good Food. Shared Stories.</p>
+                </div>
               </div>
-              <div>
-                <span className="font-serif-editorial text-xl font-bold text-charcoal-900">
-                  RecipeDeck
-                </span>
-                <p className="text-xs text-charcoal-500 font-medium">Good Food. Shared Stories.</p>
+              <p className="text-xs text-charcoal-600 leading-relaxed font-light">
+                A decentralized, sovereign culinary commons where recipes, ingredients, and appreciations are permanently inscribed on-chain.
+              </p>
+            </div>
+
+            {/* BOT Chain Ecosystem Column (Official Ecosystem Badge & Links) */}
+            <div className="space-y-3 p-4 rounded-2xl bg-cream-50/80 border border-cream-200">
+              <div className="flex items-center space-x-2.5">
+                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-white font-black text-xs shadow-sm tracking-wider">
+                  BOT
+                </div>
+                <div>
+                  <h5 className="text-xs font-bold uppercase tracking-wider text-charcoal-900">
+                    BOT Chain Ecosystem
+                  </h5>
+                  <p className="text-[11px] text-charcoal-500">Native Layer-1 Network (Chain ID 677)</p>
+                </div>
+              </div>
+              <p className="text-xs text-charcoal-600 leading-relaxed">
+                RecipeDeck operates natively on the BOT Chain blockchain.
+              </p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 pt-1 text-xs">
+                <a
+                  href="https://botchain.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 font-semibold text-emerald-700 hover:text-emerald-800 bg-emerald-50 hover:bg-emerald-100/80 border border-emerald-200 px-3 py-1.5 rounded-lg transition-colors"
+                >
+                  <span>BOT Chain website</span>
+                  <ExternalLink className="w-3 h-3 ml-0.5" />
+                </a>
+                <a
+                  href="https://scan.botchain.ai"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center space-x-1.5 font-semibold text-terracotta-700 hover:text-terracotta-800 bg-terracotta-50 hover:bg-terracotta-100/80 border border-terracotta-200 px-3 py-1.5 rounded-lg transition-colors"
+                >
+                  <span>BOT Chain explorer</span>
+                  <ExternalLink className="w-3 h-3 ml-0.5" />
+                </a>
               </div>
             </div>
 
-            <div className="text-xs text-center md:text-right space-y-1">
-              <p className="font-medium text-charcoal-700">
-                Decentralized on Botchain Mainnet (Chain ID 677)
-              </p>
-              <p className="text-charcoal-500">
-                Every recipe is an immutable cultural record. No servers, no tracking, pure culinary craft.
-              </p>
+            {/* Smart Contract & Network Verification */}
+            <div className="space-y-3 md:text-right flex flex-col md:items-end justify-between">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wider text-charcoal-800 mb-1">
+                  On-Chain Provenance
+                </p>
+                <p className="font-mono text-xs text-charcoal-600">
+                  Contract:{" "}
+                  <a
+                    href={`https://scan.botchain.ai/address/${contractAddress}#code`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-terracotta-600 underline font-semibold hover:text-terracotta-700"
+                  >
+                    {truncateAddress(contractAddress)}
+                  </a>
+                </p>
+                <p className="text-[11px] text-charcoal-500 mt-1">
+                  Zero servers • Zero databases • 100% On-Chain
+                </p>
+              </div>
+
+              <div className="text-xs text-charcoal-500">
+                <span>© {new Date().getFullYear()} RecipeDeck. Open Culinary Heritage.</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-charcoal-500 gap-3">
+            <div className="flex items-center space-x-4">
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-charcoal-800 underline underline-offset-2"
+              >
+                https://botchain.ai
+              </a>
+              <span>•</span>
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-charcoal-800 underline underline-offset-2"
+              >
+                https://scan.botchain.ai
+              </a>
+            </div>
+            <div>
+              <span>Botchain Mainnet (Chain ID 677)</span>
             </div>
           </div>
         </div>

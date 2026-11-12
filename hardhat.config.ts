@@ -26,18 +26,13 @@ const config: HardhatUserConfig = {
     localhost: {
       url: "http://127.0.0.1:8545",
     },
-    botchainTestnet: {
-      url: process.env.BOTCHAIN_TESTNET_RPC_URL || "https://rpc.bohr.life",
-      chainId: 968,
-      accounts: [formattedKey],
-    },
     botchain: {
-      url: process.env.BOTCHAIN_MAINNET_RPC_URL || "https://rpc.botchain.ai",
+      url: process.env.BOTCHAIN_RPC_URL || "https://rpc.botchain.ai",
       chainId: 677,
       accounts: [formattedKey],
     },
     botchainMainnet: {
-      url: process.env.BOTCHAIN_MAINNET_RPC_URL || "https://rpc.botchain.ai",
+      url: process.env.BOTCHAIN_RPC_URL || "https://rpc.botchain.ai",
       chainId: 677,
       accounts: [formattedKey],
     },
@@ -46,7 +41,6 @@ const config: HardhatUserConfig = {
     apiKey: {
       botchain: "none",
       botchainMainnet: "none",
-      botchainTestnet: "none",
     },
     customChains: [
       {
@@ -63,14 +57,6 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://scan.botchain.ai/api",
           browserURL: "https://scan.botchain.ai",
-        },
-      },
-      {
-        network: "botchainTestnet",
-        chainId: 968,
-        urls: {
-          apiURL: "https://scan.bohr.life/api",
-          browserURL: "https://scan.bohr.life",
         },
       },
     ],

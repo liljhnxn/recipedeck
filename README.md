@@ -27,9 +27,10 @@ Designed with the aesthetic elegance of an artisanal food magazine, RecipeDeck f
 | **Chain ID** | `677` |
 | **Currency Symbol** | `BOT` |
 | **Total Supply** | 150 Million |
-| **RPC Endpoint** | `https://rpc.botchain.ai` |
-| **Block Explorer** | `https://scan.botchain.ai` |
+| **BOT Chain Website** | [https://botchain.ai](https://botchain.ai) |
+| **BOT Chain Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
 | **Verified Contract** | [`0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code) |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
 
 ---
 
@@ -58,7 +59,7 @@ Recipedeck/
 ├── scripts/
 │   └── deploy.ts           # Hardhat deployment script for Botchain Mainnet
 ├── lib/
-│   ├── chains.ts           # Botchain Mainnet & Testnet viem chain definitions
+│   ├── chains.ts           # Botchain Mainnet viem chain definition
 │   ├── contract.ts         # Contract ABI, types & default configuration
 │   └── wagmi.ts            # Wagmi client configuration
 ├── hardhat.config.ts       # Hardhat network & compiler configuration

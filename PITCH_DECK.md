@@ -5,7 +5,8 @@
 **Network:** Botchain Mainnet (Chain ID `677`)  
 **Native Token:** `BOT`  
 **Total Supply:** 150 Million  
-**Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
+**BOT Chain Website:** [https://botchain.ai](https://botchain.ai)  
+**BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
 **GitHub:** [https://github.com/liljhnxn/recipedeck.git](https://github.com/liljhnxn/recipedeck.git)  
 
 ---

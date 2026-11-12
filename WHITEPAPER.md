@@ -8,7 +8,8 @@
 **Smart Contract:** [`0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA`](https://scan.botchain.ai/address/0xE9cD49688af28A3DA5A33e30EcEe2D4A581B47BA#code)  
 **Network:** Botchain Mainnet (Chain ID `677`)  
 **Native Currency:** `BOT`  
-**Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
+**BOT Chain Website:** [https://botchain.ai](https://botchain.ai)  
+**BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)  
 **Repository:** [https://github.com/liljhnxn/recipedeck.git](https://github.com/liljhnxn/recipedeck.git)  
 
 ---
